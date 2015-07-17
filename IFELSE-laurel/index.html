@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IFELSE</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #5a5a5a;
+        }
+
+        /* 轮播广告 */
+
+        .carousel {
+            height: 500px;
+            margin-bottom: 40px;
+        }
+
+        .carousel .item {
+            height: 500px;
+            background-color: #000;
+        }
+
+        .carousel .item img {
+            width: 100%
+			;
+        }
+
+        .carousel-caption {
+            z-index: 10;
+        }
+
+        .carousel-caption p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* 简介 */
+
+        .summary {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+
+        .summary .col-md-2 {
+            margin-bottom: 20px;
+            text-align: center;
+			margin-top:30px;
+        }
+         .summary .smallimage{
+		 height:130px;
+		 width:130px;}
+        /* 特性 */
+
+        .feature-divider {
+            margin: 40px 0;
+        }
+
+        .feature {
+            padding: 30px 0;
+        }
+
+        .feature-heading {
+            font-size: 50px;
+            color: #2a6496;
+        }
+
+        .feature-heading .text-muted {
+            font-size: 28px;
+        }
+
+        /* 响应式布局 */
+
+        @media (max-width: 768px) {
+
+            .summary {
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+
+            .carousel {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+
+            .carousel .item {
+                height: 300px;
+            }
+
+            .carousel img {
+                min-height: 300px;
+            }
+
+            .carousel-caption p {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .feature-heading {
+                font-size: 34px;
+            }
+
+            .feature-heading .text-muted {
+                font-size: 22px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .feature-heading {
+                margin-top: 120px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class=" sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IFELSE</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ad-carousel">XX</a></li>
+                <li><a href="#summary-container">XX</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XX <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab" data-tab="tab-zero">zero</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-one">one</a></li>
+						<li><a href="#feature-tab" data-tab="tab-two">two</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-three">three</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-four">four</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-five">five</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">XX</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+		<li data-target="#ad-carousel" data-slide-to="5"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/0.jpg" alt="0 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/1.jpg" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/2.jpg" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/3.jpg" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div>
+        
+		<div class="item">
+            <img src="images/4.jpg" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div><div class="item">
+            <img src="images/5.jpg" alt="5 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>XXX</h1>
+                    <p>ABOUT XXX</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="container summary">
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="chrome">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+        <div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="firefox">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+        <div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="safari">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+		<div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="safari">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+		<div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="safari">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+		<div class="col-md-2">
+            <img class="img-circle smallimage" src="images/3-small.jpg" alt="safari">
+
+            <h2>XXX</h2>
+
+            <p>XXX SAYS</p>
+        </div>
+    </div>
+
+    <!-- 特性 -->
+
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-0" role="tab" data-toggle="tab">哈尔滨</a></li>
+        <li><a href="#tab-1" role="tab" data-toggle="tab">尹吉凯</a></li>
+        <li><a href="#tab-2" role="tab" data-toggle="tab">张雨桐</a></li>
+        <li><a href="#tab-3" role="tab" data-toggle="tab">胡红青</a></li>
+        <li><a href="#tab-4" role="tab" data-toggle="tab">江苏</a></li>
+		<li><a href="#tab-5" role="tab" data-toggle="tab">浙江</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-0">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"> <span
+                            class="text-muted">XXX</span></h2>
+
+                    <p class="lead">这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="0">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-1">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="1">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"><span class="text-muted">XXX</span>
+                    </h2>
+
+                    <p class="lead"> 这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-2">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"> <span class="text-muted">XXX</span></h2>
+
+                    <p class="lead">这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="2">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-3">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="3">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"> <span class="text-muted">XXX</span>
+                    </h2>
+
+                    <p class="lead">这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</br>
+					我是一枚来自江西九江的妹子，热情活泼，就读于上海大学。虽然我接触前端很少，但是我却很想去探索它，学习它，创造它！对于我而言，好学之，乐学之是最好的状态！
+					我：上海大学  刚刚结束大二  对前端充满着好奇与热情</br>
+					专业技能：HTML5-45% CSS3-50% JAVASCRIPT-20% PHOTOSHOP-以前学过，但是感觉都忘了 BOOTSTRAP-10%</br>
+					</p>
+                </div>
+            </div>
+        </div>
+      <div class="tab-pane" id="tab-4">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"> <span class="text-muted">XXX</span></h2>
+
+                    <p class="lead">这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</p>
+                </div>
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="4">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-5">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/3-small.jpg"
+                         alt="5">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading"> <span class="text-muted">XXX</span>
+                    </h2>
+
+                    <p class="lead">这个地方我觉得放尹吉凯做的单页特别好，就是可以选择看谁的个人简介知识储备等等。</p>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于 -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>没错，我们就是来自六个不同的城市，但是我们有着一样的梦想！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">支持你们！</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+
+        <p>&copy; IFELSE </p>
+    </footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#ad-carousel').carousel();
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href) {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId) {
+                    $('#feature-tab a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
